@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cafebas</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="menu-hover">
+            <div id="menu">
+                <div class="center">
+                    <button id="fullscreen-toggle">Fullscreen</button>
+                    <input id="chapter" type="number" min="1" max="2" value="1">
+                </div>
+            </div>
+        </div>
+        <div id="scroll" tabindex="0">
+        </div>
+    </body>
+    <script>
+        const scroll = document.getElementById("scroll");
+        const chapter = document.getElementById("chapter");
+
+        const number_of_pages = 4
+
+        changeChapter();
+        chapter.addEventListener('input', () => changeChapter());
+
+        function changeChapter() {
+            removeAllChildNodes(scroll);
+
+            for (let i = 1; i <= number_of_pages; i++) {
+                const page = document.createElement("img");
+
+                page.src = "assets/content/chap" + chapter.value + "/page" + i + ".png";
+                page.className = "bd_page";
+
+                scroll.appendChild(page);
+            }
+        }
+
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+
+        const fullscreenButton = document.getElementById('fullscreen-toggle');
+
+        fullscreenButton.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+            // If not in fullscreen, request fullscreen for the entire document
+            document.documentElement.requestFullscreen().catch(err => {
+                console.error(`Error attempting to enable fullscreen: ${err.message} (${err.name})`);
+            });
+            } else {
+            // If in fullscreen, exit fullscreen
+            document.exitFullscreen();
+            }
+        })
+    </script>
+</html>

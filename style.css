@@ -1,0 +1,30 @@
+:root {
+  --primary-bg-color: black;
+}
+
+body {
+    margin: 0;
+    background-color: var(--primary-bg-color);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#menu-hover {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+}
+
+#scroll {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bd_page {
+    height: 90vh;
+}
