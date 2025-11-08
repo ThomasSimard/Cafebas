@@ -1,14 +1,9 @@
 const file_structure: Record<string, string> = {
-        "root": "content",
-        "chapter": "chap",
-        "page": "page",
-        "extension": "png"
-    };
-
-const number_of_pages: Array<number> = [
-        4,
-        2
-    ];
+    "root": "content",
+    "chapter": "chap",
+    "page": "page",
+    "extension": "png"
+};
 
 const scroll_content = document.getElementById("scroll") as HTMLElement;
 
@@ -17,7 +12,7 @@ const chapter = document.getElementById("chapter") as HTMLInputElement;
 chapter.value = getStoredChapter().toString();
 chapter.addEventListener('input', () => changeChapter());
 
-loadChapter();
+loadPages(getStoredChapter());
 
 function getStoredChapter(): number {
     const chapter = sessionStorage.getItem('chapter');
@@ -52,24 +47,29 @@ function changeChapter() {
 
     sessionStorage.setItem('chapter', chapter.value);
 
-    loadChapter();
+    loadPages(value);
 }
 
-function loadChapter() {
-    const chapter_index = getStoredChapter();
+function loadPages(chapter_index: number, page_index: number = 1) {
+    const page = document.createElement("img");
 
-    for (let page_index = 1; page_index <= number_of_pages[chapter_index - 1]; page_index++) {
-        const page = document.createElement("img");
-
-        page.src = file_structure.root + "/"
-            + file_structure.chapter + chapter_index + "/"
-            + file_structure.page
-            + page_index + "." + file_structure.extension;
-
+    page.onload = () => {
         page.className = "bd_page";
 
         scroll_content.appendChild(page);
+
+        loadPages(chapter_index, page_index + 1);
     }
+
+    page.onerror = () => {
+        page.remove();
+        return
+    };
+
+    page.src = file_structure.root + "/"
+        + file_structure.chapter + chapter_index + "/"
+        + file_structure.page
+        + page_index + "." + file_structure.extension;
 }
 
 function removeAllChildNodes(parent: HTMLElement) {
