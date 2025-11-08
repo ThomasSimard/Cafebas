@@ -1,9 +1,21 @@
+const chapter_count = 2;
+
 const file_structure: Record<string, string> = {
+    "url": "http://localhost:8000/",
     "root": "content",
     "chapter": "chap",
     "page": "page",
-    "extension": "png"
+    "extension": "png8"
 };
+
+let controller = new AbortController();
+let signal = controller.signal;
+
+let cancellation_promise = new Promise((resolve, reject) => {
+  signal.addEventListener('abort', () => {
+    reject(new DOMException('Aborted', 'AbortError'));
+  }, { once: true });
+});
 
 const scroll_content = document.getElementById("scroll") as HTMLElement;
 
@@ -24,6 +36,8 @@ function getStoredChapter(): number {
     return 1;
 }
 
+let last_chapter_index = 1;
+
 function changeChapter() {
     const chapter_index = chapter.value;
 
@@ -33,8 +47,12 @@ function changeChapter() {
 
     const value = Number(chapter_index);
 
-    if (value > 2) {
-        chapter.value = "2";
+    if (value == last_chapter_index) return;
+
+    last_chapter_index = value;
+
+    if (value > chapter_count) {
+        chapter.value = chapter_count.toString();
         return;
     }
 
@@ -43,6 +61,17 @@ function changeChapter() {
         return;
     }
 
+    controller.abort();
+
+    controller = new AbortController();
+    signal = controller.signal;
+
+    cancellation_promise = new Promise((resolve, reject) => {
+        signal.addEventListener('abort', () => {
+            reject(new DOMException('Aborted', 'AbortError'));
+        }, { once: true });
+    });
+
     removeAllChildNodes(scroll_content);
 
     sessionStorage.setItem('chapter', chapter.value);
@@ -50,26 +79,30 @@ function changeChapter() {
     loadPages(value);
 }
 
-function loadPages(chapter_index: number, page_index: number = 1) {
+async function loadPages(chapter_index: number, page_index: number = 1): Promise<number> {
     const page = document.createElement("img");
 
-    page.onload = () => {
+    const src = file_structure.root + "/"
+        + file_structure.chapter + chapter_index + "/"
+        + file_structure.page
+        + page_index + "." + file_structure.extension;
+
+    page.src = src;
+
+    const decode_promise = page.decode();
+
+    Promise.race([decode_promise, cancellation_promise])
+    .then(() => {
         page.className = "bd_page";
 
         scroll_content.appendChild(page);
 
         loadPages(chapter_index, page_index + 1);
-    }
-
-    page.onerror = () => {
+    }).catch((error) => {
         page.remove();
-        return
-    };
+    });
 
-    page.src = file_structure.root + "/"
-        + file_structure.chapter + chapter_index + "/"
-        + file_structure.page
-        + page_index + "." + file_structure.extension;
+    return 0;
 }
 
 function removeAllChildNodes(parent: HTMLElement) {
