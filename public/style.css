@@ -1,10 +1,15 @@
 :root {
   --primary-bg-color: black;
+  --primary-text-color: #e6f2ff;
 }
 
 body {
     margin: 0;
     background-color: var(--primary-bg-color);
+}
+
+.prefix {
+    color: var(--primary-text-color);
 }
 
 .center {

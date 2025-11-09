@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "postbuild": "xcopy public build /E /Y /I"
+  }
+}

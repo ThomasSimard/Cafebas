@@ -4,8 +4,9 @@ const file_structure: Record<string, string> = {
     "url": "http://localhost:8000/",
     "root": "content",
     "chapter": "chap",
+    "pdf": "chap",
     "page": "page",
-    "extension": "png8"
+    "extension": "webp"
 };
 
 let controller = new AbortController();
@@ -20,6 +21,7 @@ let cancellation_promise = new Promise((resolve, reject) => {
 const scroll_content = document.getElementById("scroll") as HTMLElement;
 
 const chapter = document.getElementById("chapter") as HTMLInputElement;
+const download = document.getElementById("download");
 
 chapter.value = getStoredChapter().toString();
 chapter.addEventListener('input', () => changeChapter());
@@ -109,20 +111,4 @@ function removeAllChildNodes(parent: HTMLElement) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-}
-
-const fullscreenButton = document.getElementById('fullscreen-toggle');
-
-if (fullscreenButton) {
-    fullscreenButton.addEventListener('click', () => {
-        if (!document.fullscreenElement) {
-        // If not in fullscreen, request fullscreen for the entire document
-        document.documentElement.requestFullscreen().catch(err => {
-            console.error(`Error attempting to enable fullscreen: ${err.message} (${err.name})`);
-        });
-        } else {
-        // If in fullscreen, exit fullscreen
-        document.exitFullscreen();
-        }
-    })
 }
