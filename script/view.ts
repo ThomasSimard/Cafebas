@@ -1,4 +1,6 @@
-const chapter_count = 2;
+import statics from "./statics.json" with { type: 'json' };
+
+const chapter_count = statics.number_of_pages.length;
 
 const file_structure: Record<string, string> = {
     "url": "http://localhost:8000/",
@@ -82,6 +84,10 @@ function changeChapter() {
 }
 
 async function loadPages(chapter_index: number, page_index: number = 1): Promise<number> {
+    if (page_index > statics.number_of_pages[chapter_index-1]) {
+        return;
+    }
+
     const page = document.createElement("img");
 
     const src = file_structure.root + "/"

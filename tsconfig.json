@@ -1,7 +1,8 @@
 {
 "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es2024",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "declaration": false,
@@ -9,7 +10,8 @@
     "removeComments": true,
     "noLib": false,
     "outDir": "./build",
-    "rootDir": "./script"
+    "rootDir": "./script",
+    "skipLibCheck": true
 },
 "include": [
     "script/*.ts",
