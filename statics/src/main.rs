@@ -51,8 +51,8 @@ struct StaticsJSON {
 }
 
 fn main() {
-    const CONTENT_ROOT: &str = "../content_blueprint/";
-    const CONTENT_OUT: &str = "../build/content/";
+    const CONTENT_ROOT: &str = "content_blueprint/";
+    const CONTENT_OUT: &str = "build/content/";
 
     let mut chapters: Vec<String> = Vec::new();
 
@@ -68,6 +68,11 @@ fn main() {
     for (index, chapter) in chapters.iter().enumerate() {
         for entry in get_files(format!("{}/{}", CONTENT_ROOT, chapter)) {
             if let Some(file_name) = get_file_name(entry) {
+                if let Some(file_name) = file_name.strip_suffix(".pdf") {
+                    let file_name_extension = file_name.to_string() + ".pdf";
+                    fs::copy(CONTENT_ROOT.to_string() + "/" + &file_name  + "/" + &file_name_extension,
+                     CONTENT_OUT.to_string() + "/" + &file_name  + "/" + &file_name_extension).expect("failed to copy pdf");
+                }
                 if let Some(file_name) = file_name.strip_suffix(".png") {
                     statics_json.number_of_pages[index] += 1;
                     convert_webp(CONTENT_ROOT.to_string(), CONTENT_OUT.to_string(), format!("{}/{}", chapter, file_name));
