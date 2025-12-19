@@ -40,6 +40,12 @@ function getStoredChapter(): number {
     return 1;
 }
 
+function update_download_link(chapter_index: number) {
+    const src = "/content/chap" + chapter_index + "/chap" + chapter_index + ".pdf"
+
+    download.setAttribute("href", src);
+}
+
 let last_chapter_index = 1;
 
 function changeChapter() {
@@ -54,6 +60,7 @@ function changeChapter() {
     if (value == last_chapter_index) return;
 
     last_chapter_index = value;
+    update_download_link(value);
 
     if (value > chapter_count) {
         chapter.value = chapter_count.toString();
