@@ -4,9 +4,7 @@
 
 ```content_blueprint/chap_[#num]``` est le dossier qui contient toutes les illustrations d'un chapitre. Il faut remplacer ```[#num]``` par le numero du chapitre.
 
-```content_blueprint/chap_[#num]/chap_[#num].pdf``` est le PDF téléchargeable.
-
-```content_blueprint/chap_[#num]/page_[#num].png``` est l'illustration d'une seule page. Il faut remplacer ```[#num]``` par le numero de la page.
+```content_blueprint/chap_[#num]/planche_[#num].png``` est l'illustration d'une planche. Il faut remplacer ```[#num]``` par le numero de la planche.
 
 Les ```[#num]``` commence à 1.
 
@@ -14,18 +12,18 @@ Exemple de l'abre des illustrations:
 ```
 content_blueprint/
     chap_1/
-        page_1.png
-        page_2.png
-        page_3.png
-        page_4.png
+        planche_1.png
+        planche_2.png
+        planche_3.png
+        planche_4.png
     chap_2/
-        page_1.png
-        page_2.png
+        planche_1.png
+        planche_2.png
 ```
 Ensuite, le ```content_blueprint``` est automatiquement transformer (quand le site web est contruit) dans ```content``` qui lui comprend les images compressées.
 
 # Développement web
-1) Installer [just](https://github.com/casey/just), [direnv](https://direnv.net/docs/installation.html) et [nix package manager](https://nixos.org/download/) 
+1) Installer [direnv](https://direnv.net/docs/installation.html) et [nix package manager](https://nixos.org/download/) 
 2) Pour runner le site: ```just start```
 3) Pour construire le site: ```just build```
 

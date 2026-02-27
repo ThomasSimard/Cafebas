@@ -23,6 +23,7 @@
             typescript
             imagemagick
 
+            just
             docker
             docker-compose
           ];
