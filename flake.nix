@@ -22,6 +22,9 @@
             nodejs_25
             typescript
             imagemagick
+
+            docker
+            docker-compose
           ];
         };
       });
