@@ -21,6 +21,7 @@
           buildInputs = with pkgs; [
             nodejs_25
             typescript
+            imagemagick
           ];
         };
       });
