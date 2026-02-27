@@ -4,7 +4,7 @@
 
 :root {
     --primary-dark-color: black;
-    --secondary-dark-color: rgb(72, 79, 95);
+    --secondary-dark-color: rgb(23, 26, 31);
 
     --primary-light-color: #e6f2ff;
     --secondary-light-color: #97caff;
@@ -18,6 +18,30 @@ body {
     padding: 0;
     background-color: var(--primary-dark-color);
 }
+
+#menu-hover {
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+#menu-hover .seperated-small {
+    width: 2.5%;
+    float: left;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--primary-dark-color);
+    background-color: var(--secondary-dark-color);
+}
+
+#menu-hover .seperated-large {
+    width: 95%;
+    float: left;
+}  
 
 input[type="number"] {
   -webkit-appearance: textfield;
@@ -100,13 +124,6 @@ button:focus {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-}
-
-#menu-hover {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 10px 0;
 }
 
 #scroll {

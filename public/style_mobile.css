@@ -3,4 +3,12 @@
     body {
       background-color: red;
     }
+    
+    #menu-hover .seperated-small {
+      display: none;
+    }
+
+    #menu-hover .seperated-large {
+      width: 100%;
+    }
 }
