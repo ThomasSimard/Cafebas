@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "build": "tsc",
-    "postbuild": "npx cpx \"src/**\" dist/"
-  }
-}
