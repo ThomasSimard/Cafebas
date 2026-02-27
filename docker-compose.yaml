@@ -3,7 +3,7 @@ services:
     image: nginx:latest
     container_name: website
     volumes:
-      - ./build:/usr/share/nginx/html
+      - ./dist:/usr/share/nginx/html
     ports:
       - 80:80
     restart: always
