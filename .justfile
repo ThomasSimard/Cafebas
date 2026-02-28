@@ -1,6 +1,9 @@
+install-modules:
+    npm install @eslint/js eslint typescript-eslint
+
 lint:
     eslint
-    
+
 fmt:
     prettier . --write
 
