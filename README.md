@@ -1,14 +1,15 @@
 # Structure des illustrations
 
-```content_blueprint``` est le dossier source, il contient tout les chapitres
+`content_blueprint` est le dossier source, il contient tout les chapitres
 
-```content_blueprint/chap_[#num]``` est le dossier qui contient toutes les illustrations d'un chapitre. Il faut remplacer ```[#num]``` par le numero du chapitre.
+`content_blueprint/chap_[#num]` est le dossier qui contient toutes les illustrations d'un chapitre. Il faut remplacer `[#num]` par le numero du chapitre.
 
-```content_blueprint/chap_[#num]/planche_[#num].png``` est l'illustration d'une planche. Il faut remplacer ```[#num]``` par le numero de la planche.
+`content_blueprint/chap_[#num]/planche_[#num].png` est l'illustration d'une planche. Il faut remplacer `[#num]` par le numero de la planche.
 
-Les ```[#num]``` commence à 1.
+Les `[#num]` commence à 1.
 
 Exemple de l'abre des illustrations:
+
 ```
 content_blueprint/
     chap_1/
@@ -20,16 +21,20 @@ content_blueprint/
         planche_1.png
         planche_2.png
 ```
-Ensuite, le ```content_blueprint``` est automatiquement transformer (quand le site web est contruit) dans ```content``` qui lui comprend les images compressées.
+
+Ensuite, le `content_blueprint` est automatiquement transformer (quand le site web est contruit) dans `content` qui lui comprend les images compressées.
 
 # Développement web
-1) Installer [direnv](https://direnv.net/docs/installation.html) et [nix package manager](https://nixos.org/download/) 
-2) Pour runner le site: ```just start```
-3) Pour construire le site: ```just build```
+
+1. Installer [direnv](https://direnv.net/docs/installation.html) et [nix package manager](https://nixos.org/download/)
+2. Pour runner le site: `just start`
+3. Pour construire le site: `just build`
 
 ## Pipeline
-L'application convertir ```content_blueprint``` en ```content```
+
+L'application convertir `content_blueprint` en `content`
 voici ce qu'elle fait :
-- Convertie les ```.png``` en ```.webp```
-- Convertie plusieurs ```.png``` pour en faire un ```.pdf``` : ```magick *.png chapitre.pdf```
-- Fait un ```statics.json``` qui liste toutes les pages possible d'un chapitre.
+
+- Convertie les `.png` en `.webp`
+- Convertie plusieurs `.png` pour en faire un `.pdf` : `magick *.png chapitre.pdf`
+- Fait un `statics.json` qui liste toutes les pages possible d'un chapitre.

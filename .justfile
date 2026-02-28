@@ -1,3 +1,9 @@
+lint:
+    eslint
+    
+fmt:
+    prettier . --write
+
 build:
     tsc
     npx cpx "src/**/*.{html,png,css}" dist/

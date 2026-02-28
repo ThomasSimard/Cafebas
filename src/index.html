@@ -1,49 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Cafebas</title>
-        <link rel="stylesheet" href="assets/style.css">
-        <link rel="stylesheet" href="assets/style_mobile.css">
-    </head>
-    <body>
-        <div id="menu-hover">
-            <button class="seperated-small">◀</button>
-            <div id="menu" class="seperated-large">
-                <div class="center">
-                    <div>
-                        <button id="fullscreen-toggle">■</button>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cafebas</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/style_mobile.css" />
+  </head>
+  <body>
+    <div id="menu-hover">
+      <button class="seperated-small">◀</button>
+      <div id="menu" class="seperated-large">
+        <div class="center">
+          <div>
+            <button id="fullscreen-toggle">■</button>
 
-                        <label class="toggle-container">
-                            <input type="checkbox" class="toggle-input">
-                            <div class="toggle-track">
-                                <span class="label-left">Page</span>
-                                <span class="label-right">Panneau</span>
-                                <div class="toggle-thumb"></div>
-                            </div>
-                        </label>
-                    </div>  
+            <label class="toggle-container">
+              <input type="checkbox" class="toggle-input" />
+              <div class="toggle-track">
+                <span class="label-left">Page</span>
+                <span class="label-right">Panneau</span>
+                <div class="toggle-thumb"></div>
+              </div>
+            </label>
+          </div>
 
-                    <div class="together">
-                        <button onclick="this.parentNode.querySelector('#chapter').stepDown()">◀</button>
-                        <label>Chapitre
-                            <input id="chapter" type="number" min="1" max="2" value="1">
-                            sur <span id="number_of_chapters">2</span>
-                        </label>
-                        <button onclick="this.parentNode.querySelector('#chapter').stepUp()">▶</button>
-                    </div>
+          <div class="together">
+            <button
+              onclick="this.parentNode.querySelector('#chapter').stepDown()"
+            >
+              ◀
+            </button>
+            <label
+              >Chapitre
+              <input id="chapter" type="number" min="1" max="2" value="1" />
+              sur <span id="number_of_chapters">2</span>
+            </label>
+            <button
+              onclick="this.parentNode.querySelector('#chapter').stepUp()"
+            >
+              ▶
+            </button>
+          </div>
 
-                    <a id="download" href="/content/chap1/chap1.pdf" download>
-                        PDF
-                    </a>
-                </div>
-            </div>
-            <button class="seperated-small">▶</button>
+          <a id="download" href="/content/chap1/chap1.pdf" download> PDF </a>
         </div>
-            <div id="scroll">
-        </div>
-    </body>
+      </div>
+      <button class="seperated-small">▶</button>
+    </div>
+    <div id="scroll"></div>
+  </body>
 </html>
-<script type="module" src="script/shortcut.js"></script>
-<script type="module" src="script/view.js"></script>
-<script type="module" src="script/fullscreen.js"></script>
+<script type="module" src="scripts/shortcut.js"></script>
+<script type="module" src="scripts/view.js"></script>
+<script type="module" src="scripts/fullscreen.js"></script>

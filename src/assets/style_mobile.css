@@ -1,14 +1,13 @@
-
 @media screen and (max-width: 767px) {
-    body {
-      background-color: red;
-    }
-    
-    #menu-hover .seperated-small {
-      display: none;
-    }
+  body {
+    background-color: red;
+  }
 
-    #menu-hover .seperated-large {
-      width: 100%;
-    }
+  #menu-hover .seperated-small {
+    display: none;
+  }
+
+  #menu-hover .seperated-large {
+    width: 100%;
+  }
 }

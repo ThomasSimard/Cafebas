@@ -1,167 +1,170 @@
 * {
-    color: var(--secondary-light-color);
+  color: var(--secondary-light-color);
 }
 
 :root {
-    --primary-dark-color: black;
-    --secondary-dark-color: rgb(23, 26, 31);
+  --primary-dark-color: black;
+  --secondary-dark-color: rgb(23, 26, 31);
 
-    --primary-light-color: #e6f2ff;
-    --secondary-light-color: #97caff;
+  --primary-light-color: #e6f2ff;
+  --secondary-light-color: #97caff;
 
-    font-weight: 800;
-    font-size: 18px;
+  font-weight: 800;
+  font-size: 18px;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-dark-color);
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-dark-color);
 }
 
 #menu-hover {
-    position: sticky;
-    top: 0;
-    width: 100%;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 #menu-hover .seperated-small {
-    width: 2.5%;
-    float: left;
-    height: 100vh;
+  width: 2.5%;
+  float: left;
+  height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    color: var(--primary-dark-color);
-    background-color: var(--secondary-dark-color);
+  color: var(--primary-dark-color);
+  background-color: var(--secondary-dark-color);
 }
 
 #menu-hover .seperated-large {
-    width: 95%;
-    float: left;
-}  
+  width: 95%;
+  float: left;
+}
 
 input[type="number"] {
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
 input {
-    border: none;
-    padding: 0;
-    width: 1rem;
+  border: none;
+  padding: 0;
+  width: 1rem;
 
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 1;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
 
-    text-align: center;
+  text-align: center;
 
-    background-color: var(--secondary-light-color);
+  background-color: var(--secondary-light-color);
 
-    color: var(--primary-dark-color);
+  color: var(--primary-dark-color);
 }
 
 input:focus {
-    color: var(--secondary-light-color);
+  color: var(--secondary-light-color);
 
-    background-color: var(--primary-dark-color);
-    outline: none;
+  background-color: var(--primary-dark-color);
+  outline: none;
 }
 
 select {
-    font-weight: 800;
-    font-size: 18px;
-    line-height: 1;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
 
-    text-align: center;
+  text-align: center;
 
-    background-color: var(--primary-light-color);
+  background-color: var(--primary-light-color);
 
-    color: var(--secondary-dark-color);
+  color: var(--secondary-dark-color);
 }
 
 option {
-    color: var(--secondary-dark-color);
+  color: var(--secondary-dark-color);
 }
 
 select:focus {
-    outline: none;
+  outline: none;
 }
 
 button {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    padding: 0;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 
-    color: var(--secondary-light-color);
+  color: var(--secondary-light-color);
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 .together {
-    padding: 4px 2px;
+  padding: 4px 2px;
 
-    line-height: 1;
+  line-height: 1;
 }
 
 .together button {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #scroll {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #fullscreen-toggle {
-    line-height: 1;
-    padding: 0 4px;
-    font-weight: 800;
-    font-size: 18px;
+  line-height: 1;
+  padding: 0 4px;
+  font-weight: 800;
+  font-size: 18px;
 
-    color: var(--secondary-light-color);
+  color: var(--secondary-light-color);
 
-  --b: 2px;   /* thickness of the border */
-  --c: var(--secondary-light-color);   /* color of the border */
-  --w: 6px;  /* width of border */
-  
+  --b: 2px; /* thickness of the border */
+  --c: var(--secondary-light-color); /* color of the border */
+  --w: 6px; /* width of border */
 
   border: var(--b) solid #0000; /* space for the border */
-  --_g: #0000 90deg,var(--c) 0;
+  --_g: #0000 90deg, var(--c) 0;
   --_p: var(--w) var(--w) border-box no-repeat;
   background:
-    conic-gradient(from 90deg  at top    var(--b) left  var(--b),var(--_g)) 0    0    / var(--_p),
-    conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g)) 100% 0    / var(--_p),
-    conic-gradient(from 0deg   at bottom var(--b) left  var(--b),var(--_g)) 0    100% / var(--_p),
-    conic-gradient(from -90deg at bottom var(--b) right var(--b),var(--_g)) 100% 100% / var(--_p);
+    conic-gradient(from 90deg at top var(--b) left var(--b), var(--_g)) 0 0 /
+      var(--_p),
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) 100%
+      0 / var(--_p),
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--_g)) 0
+      100% / var(--_p),
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--_g))
+      100% 100% / var(--_p);
 }
 
 #download {
-    color: var(--secondary-light-color);
-    line-height: 1;
+  color: var(--secondary-light-color);
+  line-height: 1;
 }
 
 .bd_page {
-    height: 90vh;
+  height: 90vh;
 }
 
 /* Container sizing */
@@ -189,7 +192,8 @@ button:focus {
 }
 
 /* Text labels */
-.label-left, .label-right {
+.label-left,
+.label-right {
   flex: 1;
   text-align: center;
   z-index: 2;
@@ -198,8 +202,12 @@ button:focus {
   transition: color 0.3s;
 }
 
-.label-left { color: var(--primary-dark-color) } /* Start dark because thumb is here */
-.label-right { color: var(--secondary-light-color); }
+.label-left {
+  color: var(--primary-dark-color);
+} /* Start dark because thumb is here */
+.label-right {
+  color: var(--secondary-light-color);
+}
 
 /* The white sliding pill (the thumb) */
 .toggle-thumb {

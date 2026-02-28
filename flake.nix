@@ -23,6 +23,9 @@
             typescript
             imagemagick
 
+            eslint
+            prettier
+
             just
             docker
             docker-compose
