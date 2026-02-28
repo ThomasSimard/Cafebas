@@ -55,6 +55,7 @@ let last_chapter_index = 1;
 
 function changeChapter() {
   const chapter_index = chapter.value;
+  console.log("UOOO");
 
   if (chapter_index.length == 0) {
     return;

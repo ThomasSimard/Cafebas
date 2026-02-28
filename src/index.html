@@ -25,21 +25,13 @@
           </div>
 
           <div class="together">
-            <button
-              onclick="this.parentNode.querySelector('#chapter').stepDown()"
-            >
-              ◀
-            </button>
+            <button id="previous-chapter">◀</button>
             <label
               >Chapitre
               <input id="chapter" type="number" min="1" max="2" value="1" />
               sur <span id="number_of_chapters">2</span>
             </label>
-            <button
-              onclick="this.parentNode.querySelector('#chapter').stepUp()"
-            >
-              ▶
-            </button>
+            <button id="next-chapter">▶</button>
           </div>
 
           <a id="download" href="/content/chap1/chap1.pdf" download> PDF </a>
@@ -50,6 +42,5 @@
     <div id="scroll"></div>
   </body>
 </html>
-<script type="module" src="scripts/shortcut.js"></script>
+<script type="module" src="scripts/actions.js"></script>
 <script type="module" src="scripts/view.js"></script>
-<script type="module" src="scripts/fullscreen.js"></script>
