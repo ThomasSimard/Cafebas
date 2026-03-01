@@ -1,4 +1,4 @@
-name: autofix.ci
+name: check formating
 on:
   pull_request:
   push:
@@ -14,7 +14,3 @@ jobs:
 
       - run: npm ci
       - run: npx prettier --write .
-
-      - uses: autofix-ci/action@v1
-        with:
-          commit-message: "Apply Prettier format"
