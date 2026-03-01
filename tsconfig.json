@@ -1,5 +1,5 @@
 {
-"compilerOptions": {
+  "compilerOptions": {
     "target": "es2024",
     "module": "esnext",
     "moduleResolution": "Bundler",
@@ -9,11 +9,9 @@
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
-    "outDir": "./build",
-    "rootDir": "./script",
+    "outDir": "./dist/scripts",
+    "rootDir": "./src/scripts",
     "skipLibCheck": true
-},
-"include": [
-    "script/*.ts",
-]
+  },
+  "include": ["src/scripts/*.ts"]
 }

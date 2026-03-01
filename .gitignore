@@ -1,3 +1,4 @@
-/content_blueprint
-/statics/target
-/build
+/content
+/dist
+/.direnv
+/node_modules

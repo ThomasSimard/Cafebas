@@ -1,8 +1,7 @@
 {
-  "scripts": {
-    "build:rust": "cargo run --manifest-path statics/Cargo.toml",
-    "build:ts": "tsc",
-    "build": "npm run build:rust && npm run build:ts",
-    "postbuild": "xcopy public build /E /Y /I"
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.2",
+    "typescript-eslint": "^8.56.1"
   }
 }
