@@ -13,4 +13,4 @@ jobs:
       - uses: actions/setup-node@v4
 
       - run: npm ci
-      - run: npx prettier --write .
+      - run: npx prettier --check .

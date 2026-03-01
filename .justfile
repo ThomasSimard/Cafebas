@@ -5,7 +5,7 @@ lint:
     eslint
 
 fmt:
-    prettier --check . 
+    prettier . --write
 
 build:
     tsc
