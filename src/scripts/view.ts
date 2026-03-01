@@ -128,4 +128,3 @@ async function loadPages(
 
   return 0;
 }
-

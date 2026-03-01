@@ -14,6 +14,9 @@ function updateFullscreenToggle() {
   }
 }
 
+
+
+
 class ChapterControls {
   private chapterInput: HTMLInputElement | null;
 
@@ -36,7 +39,7 @@ class ChapterControls {
     const chapter = Number(sessionStorage.getItem("chapter"));
 
     if (!Number.isFinite(chapter) || chapter <= 0) {
-        return 1;
+      return 1;
     }
 
     return chapter;
