@@ -26,23 +26,13 @@ let cancellation_promise = new Promise((resolve, reject) => {
 
 const scroll_content = document.getElementById("scroll") as HTMLElement;
 
-const chapter = document.getElementById("chapter") as HTMLInputElement;
+//const chapter = document.getElementById("chapter") as HTMLInputElement;
 const download = document.getElementById("download");
 
-chapter.value = getStoredChapter().toString();
-chapter.addEventListener("input", () => changeChapter());
+//chapter.value = getStoredChapter().toString();
+//chapter.addEventListener("input", () => changeChapter());
 
-loadPages(getStoredChapter());
-
-function getStoredChapter(): number {
-  const chapter = sessionStorage.getItem("chapter");
-
-  if (chapter) {
-    return Number(chapter);
-  }
-
-  return 1;
-}
+//loadPages(getStoredChapter());
 
 function update_download_link(chapter_index: number) {
   const src =
@@ -53,7 +43,7 @@ function update_download_link(chapter_index: number) {
 
 let last_chapter_index = 1;
 
-function changeChapter() {
+/*function changeChapter() {
   const chapter_index = chapter.value;
   console.log("UOOO");
 
@@ -95,10 +85,8 @@ function changeChapter() {
 
   removeAllChildNodes(scroll_content);
 
-  sessionStorage.setItem("chapter", chapter.value);
-
   loadPages(value);
-}
+}*/
 
 async function loadPages(
   chapter_index: number,
@@ -141,8 +129,3 @@ async function loadPages(
   return 0;
 }
 
-function removeAllChildNodes(parent: HTMLElement) {
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild);
-  }
-}
