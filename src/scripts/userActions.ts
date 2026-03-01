@@ -14,9 +14,6 @@ function updateFullscreenToggle() {
   }
 }
 
-
-
-
 class ChapterControls {
   private chapterInput: HTMLInputElement | null;
 
