@@ -1,8 +1,19 @@
 {
+  "name": "cafebas",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev"
+	},
   "dependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.0.2",
     "lighthouse": "^13.0.3",
     "typescript-eslint": "^8.56.1"
-  }
+  },
+  "devDependencies": {
+		"wrangler": "^4.69.0"
+	}
 }
