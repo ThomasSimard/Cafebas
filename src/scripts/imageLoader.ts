@@ -1,4 +1,6 @@
-const image_container = document.getElementById("image_container") as HTMLElement;
+const image_container = document.getElementById(
+  "image_container",
+) as HTMLElement;
 
 export function loadChapter(chapter: number) {
   loadPage(chapter, 1);
@@ -10,10 +12,10 @@ export function loadPage(chapter: number, page: number) {
   const img = new Image();
 
   img.src = "/content/chapter_1/planche_" + page + ".png";
-  
+
   img.className = "bd_page";
   img.alt = "planche #" + page;
-  
+
   img.width = 1240.5;
   img.height = 1753.5;
 
