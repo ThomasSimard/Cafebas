@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+@media screen and (max-aspect-ratio: 1/1) {
   body {
     background-color: red;
   }
@@ -9,5 +9,10 @@
 
   #menu-hover .seperated-large {
     width: 100%;
+  }
+
+  .bd_page {
+    max-width: 100%;
+    max-height: max-content;
   }
 }

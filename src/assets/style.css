@@ -3,7 +3,7 @@
 }
 
 :root {
-  --primary-dark-color: black;
+  --primary-dark-color: green;
   --secondary-dark-color: rgb(23, 26, 31);
 
   --primary-light-color: #e6f2ff;
@@ -20,7 +20,6 @@ body {
 }
 
 #menu-hover {
-  position: sticky;
   top: 0;
   width: 100%;
 }
@@ -124,6 +123,8 @@ button:focus {
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  height: 5vh;
+
 }
 
 #scroll {
@@ -164,7 +165,10 @@ button:focus {
 }
 
 .bd_page {
-  height: 90vh;
+  max-width: 50%;
+  width: auto;
+  max-height: 95vh;
+  height: auto;
 }
 
 /* Container sizing */

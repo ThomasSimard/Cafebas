@@ -15,6 +15,7 @@ function updateFullscreenToggle() {
 }
 
 class ChapterControls {
+  private last_chapter: Number | null;
   private chapterInput: HTMLInputElement | null;
 
   constructor() {
@@ -23,9 +24,11 @@ class ChapterControls {
     ) as HTMLInputElement | null;
 
     const current_chapter = this.getCurrentChapterSession();
+
+    this.last_chapter = current_chapter;
     this.chapterInput.value = current_chapter.toString();
 
-    this.chapterInput.addEventListener("input", () =>
+    this.chapterInput.addEventListener("change", () =>
       this.updateCurrentChapterSession(),
     );
 
@@ -43,9 +46,18 @@ class ChapterControls {
   }
 
   private updateCurrentChapterSession(): void {
-    sessionStorage.setItem("chapter", this.chapterInput.value);
+    const current_chapter = Number(this.chapterInput?.value);
 
-    reloadImages(Number(this.chapterInput));
+    if (current_chapter == this.last_chapter)
+      return
+
+    this.last_chapter = current_chapter;
+
+    console.log("update");
+
+    sessionStorage.setItem("chapter", current_chapter.toString());
+
+    reloadImages(current_chapter);
   }
 
   previousChapter = (): void => {
