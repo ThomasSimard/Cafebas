@@ -1,0 +1,28 @@
+name: "verify"
+on:
+  pull_request:
+    paths:
+      - "**/*.ts"
+  push:
+    paths:
+      - "**/*.ts"
+permissions: {}
+jobs:
+  eslint:
+    name: "check linting"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+
+      - run: npm ci
+      - run: npx eslint
+  tsc:
+    name: "check building"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+
+      - run: npm ci
+      - run: npx tsc

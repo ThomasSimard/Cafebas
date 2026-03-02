@@ -27,8 +27,7 @@ Ensuite, le `content_blueprint` est automatiquement transformer (quand le site w
 # Développement web
 
 1. Installer [direnv](https://direnv.net/docs/installation.html) et [nix package manager](https://nixos.org/download/)
-2. Pour runner le site: `just start`
-3. Pour construire le site: `just build`
+2. Pour build & runner le site localement: `just build`
 
 ## Pipeline
 

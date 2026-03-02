@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <title>Cafebas</title>
+
     <link rel="stylesheet" href="assets/style.css" />
-    <link rel="stylesheet" href="assets/style_mobile.css" />
+    <link rel="stylesheet" href="assets/style_tall_screen.css" />
+
+    <script defer type="module" src="scripts/userActions.js"></script>
+    <script defer type="module" src="scripts/imageLoader.js"></script>
   </head>
   <body>
     <div id="menu-hover">
@@ -36,11 +40,9 @@
 
           <a id="download" href="/content/chap1/chap1.pdf" download> PDF </a>
         </div>
+        <div id="image_container"></div>
       </div>
       <button class="seperated-small">▶</button>
     </div>
-    <div id="scroll"></div>
   </body>
 </html>
-<script type="module" src="scripts/userActions.js"></script>
-<script type="module" src="scripts/imageLoader.js"></script>
