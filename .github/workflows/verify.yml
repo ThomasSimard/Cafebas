@@ -1,9 +1,11 @@
-name: "verify" 
+name: "verify"
 on:
   pull_request:
+    paths:
+      - "**/*.ts"
   push:
-    paths-ignore:
-      - ".github/**"
+    paths:
+      - "**/*.ts"
 permissions: {}
 jobs:
   prettier:

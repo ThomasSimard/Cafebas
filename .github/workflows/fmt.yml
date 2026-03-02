@@ -1,0 +1,19 @@
+name: "format"
+on:
+  pull_request:
+    paths-ignore:
+      - ".github/**"
+  push:
+    paths-ignore:
+      - ".github/**"
+permissions: {}
+jobs:
+  prettier:
+    name: "check formating"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+
+      - run: npm ci
+      - run: npx prettier --check .

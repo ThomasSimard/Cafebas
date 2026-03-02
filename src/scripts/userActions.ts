@@ -15,7 +15,7 @@ function updateFullscreenToggle() {
 }
 
 class ChapterControls {
-  private last_chapter: Number | null;
+  private last_chapter: number | null;
   private chapterInput: HTMLInputElement | null;
 
   constructor() {
@@ -48,8 +48,7 @@ class ChapterControls {
   private updateCurrentChapterSession(): void {
     const current_chapter = Number(this.chapterInput?.value);
 
-    if (current_chapter == this.last_chapter)
-      return
+    if (current_chapter == this.last_chapter) return;
 
     this.last_chapter = current_chapter;
 
