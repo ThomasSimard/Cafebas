@@ -1,4 +1,4 @@
-import { loadImages, reloadImages } from "./imageLoader.js";
+import { loadChapter, reloadImages } from "./imageLoader.js";
 
 // Actions that a user can do
 
@@ -32,7 +32,7 @@ class ChapterControls {
       this.updateCurrentChapterSession(),
     );
 
-    loadImages(current_chapter);
+    loadChapter(current_chapter);
   }
 
   private getCurrentChapterSession(): number {
